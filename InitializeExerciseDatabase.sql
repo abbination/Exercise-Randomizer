@@ -35,7 +35,7 @@ CREATE TABLE movement (
     date_created DATETIME NOT NULL DEFAULT NOW(),
     date_updated DATETIME NOT NULL DEFAULT NOW(),
     `name` VARCHAR(50) NOT NULL,
-    needs_mat BINARY,
+    needs_mat BIT,
     type_id TINYINT UNSIGNED NOT NULL,
     body_target_id TINYINT UNSIGNED NOT NULL,
     CONSTRAINT UC_Movement UNIQUE (`name`),
@@ -65,6 +65,6 @@ FOR EACH ROW SET new.date_updated = NOW();
 CREATE TABLE staging (
 	movement VARCHAR(50),
     body_target VARCHAR(25),
-    needs_mat BINARY,
+    needs_mat TINYINT,
     `type` VARCHAR(25)
 );
